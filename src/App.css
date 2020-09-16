@@ -1,38 +1,53 @@
-.App {
-  text-align: center;
+.card{
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.data{
+    text-align: center;
+    font-weight: bold;
+    font-size: 15px ;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.progress{
+    margin-top: 10px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+#progress{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color:white;
 }
-
-.App-link {
-  color: #61dafb;
+body{
+    background-color: gray;
 }
+.popup-2{
+    background-color: rgba(0,0,0, 0.5) !important;
+}
+.popup-overlay{
+    background: #5d585875 !important;
+}
+.popup-content{
+    position: absolute;
+    z-index: 999;
+    pointer-events: auto;
+    top: 100px !important;
+    left: 650px !important; 
+    
+}
+#popup-msg{
+    text-align: center;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 500px;
+    color: green;
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+}
+@media only screen and (max-width: 480px){
+    .popup-content{
+        position: absolute;
+        z-index: 999;
+        pointer-events: auto;
+        top: 150px !important;
+        left: 100px !important; 
+    }
 }
