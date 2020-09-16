@@ -9,6 +9,7 @@ import {AddEmployee} from '../action/employee'
 
 
 
+
 function Main({AddEmployee}) {
 
     const [page, setPage] =useState({page:1})

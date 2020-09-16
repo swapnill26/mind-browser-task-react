@@ -74,6 +74,7 @@ function SecondPage({onSubmit,previousPage,emp,onChange}) {
                                         className="form-control"
                                         value={emp.expertise_in_react}
                                         onChange={e=>onChange(e)}
+                                        required
                                         />
                                     </div>
                                     <div className="col-xl-2">
@@ -90,6 +91,7 @@ function SecondPage({onSubmit,previousPage,emp,onChange}) {
                                     placeholder="Enter Summary"
                                     value={emp.summary}
                                     onChange={e=>onChange(e)}
+                                    required
                                     />
                                 </div>
                             </div>

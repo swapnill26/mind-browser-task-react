@@ -1,19 +1,9 @@
 import React, { Fragment} from 'react';
-import Select from 'react-select/creatable'
-
-import {connect} from 'react-redux'
 import ProgressBar from '../../node_modules/react-bootstrap/ProgressBar'
-import validate from './validation'
 
 
 
-const cityinfo=[
-    { value: 'Kolhapur', label: 'Kolhapur' },
-    { value: 'Pune', label: 'Pune' },
-    { value: 'Satara', label: 'Satara' }]
-
- function FirstPage({onSubmit,emp,onChange,handleChange}) { 
-        console.log(emp.city);
+ function FirstPage({onSubmit,emp,onChange}) { 
     return (
         <Fragment>
             <div className="container">
@@ -21,7 +11,7 @@ const cityinfo=[
                 <div className='progress'>
                     <ProgressBar now={0} label={0} />
                 </div>
-                <form onSubmit={onSubmit}>
+                <form onSubmit={onSubmit} >
                     <div className="card">
                         <div className="card-header">Basic Info</div>
                         <div className="card-body">
@@ -35,7 +25,7 @@ const cityinfo=[
                                  value={emp.first_name}
                                  onChange={e=>onChange(e)}
                                  required
-                                 />
+                                 />                                
                             </div>
                             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12">
                                 <label htmlFor="">Last Name</label>
@@ -69,7 +59,7 @@ const cityinfo=[
                                  placeholder="Enter Email"
                                  value={emp.email}
                                  onChange={e=>onChange(e)}
-                                 required
+                                 required                                 
                                  />
                             </div>
                         </div>
@@ -94,7 +84,7 @@ const cityinfo=[
                                  />
                             </div>
                         </div>
-                        <input type="submit" className="btn btn-primary" value="next" /> 
+                        <input type="submit" className="btn btn-primary" value="next"  /> 
                     </div>
                     </div>  
                 </form>
@@ -103,6 +93,4 @@ const cityinfo=[
     )
 }
 
-
-
-export default  FirstPage
+export default FirstPage
