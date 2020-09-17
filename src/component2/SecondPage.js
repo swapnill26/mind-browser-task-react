@@ -2,7 +2,7 @@ import React, { Fragment } from 'react'
 
 import ProgressBar from '../../node_modules/react-bootstrap/ProgressBar'
 
-function SecondPage({onSubmit,previousPage,emp,onChange}) {
+function SecondPage({onSubmit,prevPage,emp,onChange}) {
 
     return (
         <Fragment>
@@ -97,7 +97,7 @@ function SecondPage({onSubmit,previousPage,emp,onChange}) {
                             </div>
                             <div className="container row form-group">
                                 <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12">
-                                    <button type="button" className="btn btn-primary" onClick={previousPage}>Previous</button>
+                                    <button type="button" className="btn btn-primary" onClick={prevPage}>Previous</button>
                                 </div>
                                 <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12">
                                     <button type="submit" className="btn btn-primary">Next</button>

@@ -4,7 +4,7 @@ import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 
 
-const ThirdPage = ({previousPage,emp,onSubmit}) => {
+const ThirdPage = ({prevPage,emp,onSubmit}) => {
     return (
         <Fragment>
                 <form>
@@ -44,7 +44,7 @@ const ThirdPage = ({previousPage,emp,onSubmit}) => {
                             </div>
                             <div className="row">
                                 <div className="col-xl-6 col-lg-6 col-ms-6 col-sm-6 col-xs-6 col-12">
-                                    <button type="button" className="btn btn-primary" onClick={previousPage}>Previous</button>
+                                    <button type="button" className="btn btn-primary" onClick={prevPage}>Previous</button>
                                 </div>
                                 <div className="col-xl-6 col-lg-6 col-ms-6 col-sm-6 col-xs-6 col-12">
                                     <Popup trigger={<button onSubmit={onSubmit}  className="btn btn-success"> submit</button>} >
