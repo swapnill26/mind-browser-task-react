@@ -1,15 +1,34 @@
-import React, { Fragment } from 'react'
-
+import React, { Fragment , useState } from 'react'
 import ProgressBar from '../../node_modules/react-bootstrap/ProgressBar'
+import  validate from './validate';
 
 function SecondPage({onSubmit,prevPage,emp,onChange}) {
+    const [error,setError]=useState({})
+
+    const sub=async(e)=>{
+        e.preventDefault();       
+        let errorData=await validate(emp);
+        setError(errorData)
+        if(errorData.company && errorData.company!==''){
+            console.log('error');
+        }else if(errorData.job && errorData.job !==''){
+            console.log('error');
+        }else if(errorData.linkedin && errorData.linkedin!==''){
+            console.log('error');
+        }else if(errorData.github && errorData.github!==''){
+            console.log('error');
+        }else{
+            onSubmit()
+        }
+
+    }
 
     return (
         <Fragment>
             <div className="container">
                 <label htmlFor="" id='progress'>Progress ......</label>
                 <ProgressBar className="progress" now={60} label={60} />
-                <form onSubmit={onSubmit}>
+                <form onSubmit={e=>sub(e)}>
                     <div className="card">
                         <div className="card-header">About Info</div>
                         <div className="card-body">
@@ -22,8 +41,8 @@ function SecondPage({onSubmit,prevPage,emp,onChange}) {
                                  placeholder="Enter company Name"
                                  value={emp.company}
                                  onChange={e=>onChange(e)}
-                                 required
                                  />
+                                 <span id="error">{ error.company}</span>
                             </div>
                             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12">
                                 <label htmlFor="">Job title</label>
@@ -33,8 +52,8 @@ function SecondPage({onSubmit,prevPage,emp,onChange}) {
                                  placeholder="Enter Job title"
                                  value={emp.job_title}
                                  onChange={e=>onChange(e)}
-                                 required
                                  />
+                                 <span id="error">{ error.job}</span>
                             </div>
                         </div>
                         <div className="container row form-group">
@@ -44,10 +63,10 @@ function SecondPage({onSubmit,prevPage,emp,onChange}) {
                                     className="form-control"
                                     name="linkedin"
                                     placeholder="Enter linkedin link"
-                                    value={emp.linkedin}
+                                    value={ emp.linkedin }
                                     onChange={e=>onChange(e)}
-                                    required
                                     />
+                                    <span id="error">{ error.linkedin }</span>
                                 </div>
                                 <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-xs-12 col-12">
                                     <i className="fa fa-github"/>
@@ -57,8 +76,8 @@ function SecondPage({onSubmit,prevPage,emp,onChange}) {
                                     placeholder="Enter github link"
                                     value={emp.github}
                                     onChange={e=>onChange(e)}
-                                    required
                                     />
+                                    <span id="error">{ error.github }</span>
                                 </div>
                             </div>
                             <div className="container  form-group">
@@ -91,7 +110,6 @@ function SecondPage({onSubmit,prevPage,emp,onChange}) {
                                     placeholder="Enter Summary"
                                     value={emp.summary}
                                     onChange={e=>onChange(e)}
-                                    required
                                     />
                                 </div>
                             </div>

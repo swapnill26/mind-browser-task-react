@@ -2,6 +2,7 @@ import {NEXT_PAGE,PREV_PAGE,PAGE_ERROR} from '../action/types';
 
 export const nextPage=()=>dispatch=>{
     try {
+       
         dispatch({
             type:NEXT_PAGE
         })

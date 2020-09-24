@@ -12,18 +12,7 @@ import {nextPage,prevPage} from '../action/page';
 
 
 function Main({AddEmployee,nextPage,prevPage,page}) {
-
-    //const [page, setPage] =useState({page:1})
     const [emp,setEmp]=useState({first_name:'',last_name:'',mobile:'',email:'',city:'',dob:'',company:'',job_title:'',linkedin:'',github:'',expertise_in_react:'',summary:''})
-  
-    // const nextPage=(e)=>{
-    //     e.preventDefault();
-    //     setPage({page:page.page+1})
-    // }
-    // const previousPage=(e)=>{
-    //     e.preventDefault();
-    //     setPage({page:page.page-1})
-    // }
 
     const onChange=(e)=>{
         setEmp({...emp,[e.target.name]:e.target.value})
